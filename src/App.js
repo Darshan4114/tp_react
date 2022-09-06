@@ -33,7 +33,7 @@ function App() {
           <h2 className={styl.caps}>Online social fundraising</h2>
           <h2>Add social to grow your fundraising year round</h2>
           <p>Social AMPTM is a set of features designed to promote sharing.</p>
-          <a href="#">Learn more</a>
+          <a href="/">Learn more</a>
         </div>
       </div>
     </div>
