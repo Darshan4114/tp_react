@@ -5,9 +5,7 @@ function App() {
   const [textData, setTextData] = useState(null);
 
   useEffect(() => {
-    fetch(
-      "https://631779098b8f1c0461f15083--capable-dusk-4622f5.netlify.app/.netlify/functions/api/"
-    )
+    fetch("https://capable-dusk-4622f5.netlify.app/.netlify/functions/api/")
       .then((res) => res.json())
       .then((res) => setTextData(res))
       .catch((err) => console.log("err", err));
