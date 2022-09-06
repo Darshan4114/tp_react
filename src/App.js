@@ -1,15 +1,22 @@
 import styl from "./App.module.css";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [textData, setTextData] = useState(null);
+
+  useEffect(() => {
+    fetch("https://631779098b8f1c0461f15083--capable-dusk-4622f5.netlify.app/")
+      .then((res) => res.json())
+      .then((res) => setTextData(res))
+      .catch((err) => console.log("err", err));
+  }, []);
+
   return (
     <div className={styl.container}>
       <div className={styl.col2}>
         <div className={styl.col}>
-          <h1>Social fundraising that actually works for nonprofits</h1>
-          <blockquote>
-            Proven to increase giving, event participation, and awareness of
-            your cause.
-          </blockquote>
+          {textData && <h1>{textData.hero}</h1>}
+          {textData && <blockquote>{textData.blockquote}</blockquote>}
           <div className={styl.btnGrp}>
             <button className={styl.primary}>
               <span className={styl.smallScreen}>Start</span>
@@ -30,9 +37,9 @@ function App() {
           <img src="secondary.jpeg" alt="Children" />
         </div>
         <div className={`${styl.col} ${styl.switchOrder1}`}>
-          <h2 className={styl.caps}>Online social fundraising</h2>
-          <h2>Add social to grow your fundraising year round</h2>
-          <p>Social AMPTM is a set of features designed to promote sharing.</p>
+          {textData && <h2 className={styl.caps}>{textData.orange}</h2>}
+          {textData && <h2>{textData.h2}</h2>}
+          {textData && <p>{textData.p}</p>}
           <a href="/">Learn more</a>
         </div>
       </div>
