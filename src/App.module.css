@@ -1,0 +1,142 @@
+:root {
+  --blue: #3e80f0;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  width: 60rem;
+  margin: 2em auto;
+  max-width: 100vw;
+  color: #1b2c60;
+}
+
+.container .col2 {
+  display: -ms-grid;
+  display: grid;
+}
+
+.container .col {
+  margin: 0.5em 1em;
+}
+
+.container h1,
+.container h2 {
+  font-family: "Nunito", sans-serif;
+  font-weight: 200;
+}
+
+.container h1 {
+  font-size: 3rem;
+}
+
+.container h2 {
+  font-size: 1.5rem;
+}
+
+.container .caps {
+  text-transform: uppercase;
+  color: #de894f;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+}
+
+.container img {
+  max-width: 100%;
+  border-radius: 1em;
+}
+
+.btnGrp {
+  display: -ms-grid;
+  display: grid;
+  width: 14rem;
+  margin: 1em auto;
+  font-weight: bold;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+.btnGrp .largeScreen {
+  display: none;
+}
+
+button {
+  border-radius: 3rem;
+  padding: 1em;
+  width: 6rem;
+  cursor: pointer;
+}
+
+button.primary {
+  background: var(--blue);
+  border: none;
+  color: #fff;
+}
+
+button.secondary {
+  background: none;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+}
+
+blockquote {
+  margin: 0;
+}
+
+.switchOrder1 {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.switchOrder2 {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--blue);
+}
+
+@media screen and (min-width: 768px) {
+  .container > div {
+    gap: 1em;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  blockquote {
+    border-left: 3px solid #de894f;
+    padding-left: 1em;
+  }
+  .btnGrp {
+    width: 20rem;
+  }
+  .btnGrp .largeScreen {
+    display: block;
+  }
+  .btnGrp .smallScreen {
+    display: none;
+  }
+  .btnGrp button {
+    width: 9rem;
+  }
+  .switchOrder1 {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .switchOrder2 {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+/*# sourceMappingURL=App.module.css.map */
